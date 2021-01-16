@@ -15,18 +15,18 @@ while True:
     cv2.imshow("DroneCam", img)
     cv2.waitKey(1)
 
+    me.takeoff()
 
+    me.send_rc_control(0, 60, 0, 0)
+    sleep(3.4)
 
+    me.send_rc_control(0, 0, 0, 0)
+    sleep(2)
+
+    me.send_rc_control(0, 0, 0, 100)
+    sleep(3)
+    me.land()
+    me.end()
 
 # Takeoff, move for 2 seconds, move right for 2 seconds, land
 
-# me.takeoff()
-
-# me.send_rc_control(0, 50, 0, 0)
-# sleep(2)
-
-# me.send_rc_control(50, 0, 0, 0)
-# sleep(2)
-
-# me.send_rc_control(0, 0, 0, 0)
-# me.land()
